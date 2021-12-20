@@ -5,6 +5,10 @@ app.get("", (req, res) => {
   res.send("hellow express");
 });
 
+app.get("/about", (req, res) => {
+  res.send([{ name: "Thinh", age: 20 }]);
+});
+
 app.listen(port, () => {
   console.log("example app listening at ...");
 });
