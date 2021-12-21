@@ -3,11 +3,15 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+//define paths for express config
 const publicDirectoryPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates");
 
+//setup handlebars and views location
 app.set("view engine", "hbs");
 app.set("views", viewsPath);
+
+//setup directory to server
 app.use(express.static(publicDirectoryPath));
 
 app.get("", (req, res) => {
